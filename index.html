@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nikitis LLC - Government Contracting Solutions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+```
+    body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        line-height: 1.7;
+        color: #1e293b;
+        background: #ffffff;
+    }
+
+    .hero {
+        background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #3b82f6 100%);
+        color: white;
+        padding: 5rem 2rem;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+        opacity: 0.5;
+    }
+
+    .hero-content {
+        max-width: 900px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+
+    .logo-section {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .logo {
+        font-size: 3rem;
+        font-weight: 800;
+        letter-spacing: -1px;
+    }
+
+    .veteran-badge {
+        background: #dc2626;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        font-size: 0.85rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+    }
+
+    .tagline {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        opacity: 0.95;
+        font-weight: 500;
+    }
+
+    .hero-description {
+        font-size: 1.1rem;
+        opacity: 0.9;
+        margin-bottom: 2rem;
+        max-width: 700px;
+    }
+
+    .credentials {
+        display: flex;
+        gap: 2rem;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+    }
+
+    .credential-item {
+        background: rgba(255,255,255,0.1);
+        backdrop-filter: blur(10px);
+        padding: 0.75rem 1.25rem;
+        border-radius: 8px;
+        border: 1px solid rgba(255,255,255,0.2);
+        font-size: 0.9rem;
+    }
+
+    .credential-item strong {
+        display: block;
+        font-size: 0.75rem;
+        opacity: 0.8;
+        margin-bottom: 0.25rem;
+    }
+    
+    .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 4rem 2rem;
+    }
+
+    .section {
+        margin-bottom: 4rem;
+    }
+
+    .section-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .section-icon {
+        font-size: 2.5rem;
+        filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.1));
+    }
+
+    h2 {
+        font-size: 2rem;
+        color: #0f172a;
+        font-weight: 700;
+    }
+
+    .intro-box {
+        background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%);
+        padding: 2.5rem;
+        border-radius: 16px;
+        border-left: 6px solid #3b82f6;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    }
+
+    .intro-box p {
+        color: #334155;
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 1rem;
+    }
+
+    .intro-box p:last-child {
+        margin-bottom: 0;
+    }
+
+    .value-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2rem;
+    }
+
+    .value-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 12px;
+        border: 2px solid #e2e8f0;
+        transition: all 0.3s;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .value-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4px;
+        height: 100%;
+        background: linear-gradient(180deg, #3b82f6, #8b5cf6);
+        transform: scaleY(0);
+        transition: transform 0.3s;
+    }
+
+    .value-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+        border-color: #3b82f6;
+    }
+
+    .value-card:hover::before {
+        transform: scaleY(1);
+    }
+
+    .value-card h3 {
+        color: #0f172a;
+        margin-bottom: 0.75rem;
+        font-size: 1.15rem;
+    }
+
+    .value-card p {
+        color: #64748b;
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .capabilities-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .capability-card {
+        background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+        color: white;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        transition: transform 0.3s;
+    }
+
+    .capability-card:hover {
+        transform: translateY(-6px);
+    }
+
+    .capability-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .capability-card h3 {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+        font-weight: 600;
+    }
+
+    .capability-card ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .capability-card li {
+        padding: 0.5rem 0;
+        font-size: 0.95rem;
+        opacity: 0.95;
+    }
+
+    .capability-card li:before {
+        content: "→ ";
+        font-weight: bold;
+    }
+
+    .experience-section {
+        background: #f8fafc;
+        padding: 3rem;
+        border-radius: 16px;
+        margin-top: 2rem;
+    }
+
+    .experience-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+    }
+
+    .experience-item {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 8px;
+        border-left: 4px solid #22c55e;
+    }
+
+    .experience-item::before {
+        content: "✓";
+        color: #22c55e;
+        font-weight: bold;
+        font-size: 1.5rem;
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+
+    .experience-item p {
+        color: #475569;
+        font-size: 0.95rem;
+    }
+
+    .cta-section {
+        background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+        color: white;
+        padding: 4rem 3rem;
+        border-radius: 20px;
+        text-align: center;
+        margin-top: 4rem;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .cta-section::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(59,130,246,0.1) 0%, transparent 70%);
+        animation: pulse 4s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+    }
+
+    .cta-content {
+        position: relative;
+        z-index: 1;
+    }
+
+    .cta-section h2 {
+        color: white;
+        margin-bottom: 1rem;
+        font-size: 2.25rem;
+    }
+
+    .cta-section p {
+        font-size: 1.15rem;
+        opacity: 0.95;
+        margin-bottom: 2rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .contact-info {
+        display: flex;
+        justify-content: center;
+        gap: 3rem;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+        font-size: 1.05rem;
+    }
+
+    .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .contact-item a {
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    .contact-item a:hover {
+        text-decoration: underline;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 1rem 2.5rem;
+        background: #3b82f6;
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 1.05rem;
+        transition: all 0.3s;
+        border: 2px solid transparent;
+    }
+
+    .btn:hover {
+        background: #2563eb;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 16px rgba(59,130,246,0.3);
+    }
+
+    @media (max-width: 768px) {
+        .hero {
+            padding: 3rem 1.5rem;
+        }
+
+        .logo {
+            font-size: 2rem;
+        }
+
+        .tagline {
+            font-size: 1.25rem;
+        }
+
+        .container {
+            padding: 2rem 1.5rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+        }
+
+        .credentials {
+            gap: 1rem;
+        }
+
+        .contact-info {
+            gap: 1.5rem;
+        }
+    }
+</style>
+```
+
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-content">
+            <div class="logo-section">
+                <div class="logo">NIKITIS LLC</div>
+                <div class="veteran-badge">VETERAN OWNED</div>
+            </div>
+            <div class="tagline">Government Contracting Made Simple</div>
+            <p class="hero-description">Victor here. I'm a veteran bringing reliable procurement consulting, facilities services, and logistics support to federal, state, and local government buyers—with the personal accountability larger contractors can't match.</p>
+            <div class="credentials">
+                <div class="credential-item">
+                    <strong>SAM.gov</strong>
+                    Active & Ready
+                </div>
+                <div class="credential-item">
+                    <strong>CAGE Code</strong>
+                    9R6E6
+                </div>
+                <div class="credential-item">
+                    <strong>Location</strong>
+                    Traverse City, MI
+                </div>
+            </div>
+        </div>
+    </div>
+
+```
+<div class="container">
+    <div class="section">
+        <div class="intro-box">
+            <p><strong>My approach is straightforward:</strong> understand the mission, source the right solution, execute flawlessly, and document everything. Whether it's sourcing hard-to-find parts, managing facility maintenance, or navigating complex procurement requirements, I bring accountability and reliability to every contract.</p>
+            <p>I'm building a lean, compliance-first operation that can handle micro-purchases today and scale to simplified acquisitions and IDIQs tomorrow. Direct communication with me on every project—no bureaucracy, no runaround.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-header">
+            <span class="section-icon">💼</span>
+            <h2>Why Work With Me</h2>
+        </div>
+        <div class="value-grid">
+            <div class="value-card">
+                <h3>🎖️ Veteran Leadership</h3>
+                <p>Mission-first mindset with commitment to excellence learned through service</p>
+            </div>
+            <div class="value-card">
+                <h3>⚡ Fast Response</h3>
+                <p>Quick turnaround on quotes and willingness to take small or rush orders</p>
+            </div>
+            <div class="value-card">
+                <h3>⚖️ Compliance Ready</h3>
+                <p>Audit-ready documentation and adherence to federal acquisition regulations</p>
+            </div>
+            <div class="value-card">
+                <h3>🤝 Direct Access</h3>
+                <p>Work directly with the owner on every project—no layers, just results</p>
+            </div>
+            <div class="value-card">
+                <h3>💰 Competitive Pricing</h3>
+                <p>Lean overhead means better rates without sacrificing quality or compliance</p>
+            </div>
+            <div class="value-card">
+                <h3>📈 Scalable Capacity</h3>
+                <p>Vetted subcontractor network ready to scale with your project needs</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-header">
+            <span class="section-icon">🔧</span>
+            <h2>Core Capabilities</h2>
+        </div>
+        <div class="capabilities-grid">
+            <div class="capability-card">
+                <div class="capability-icon">📋</div>
+                <h3>Procurement Consulting</h3>
+                <ul>
+                    <li>Market research</li>
+                    <li>Bid/no-bid analysis</li>
+                    <li>Competitive pricing</li>
+                    <li>Compliance docs</li>
+                </ul>
+            </div>
+            <div class="capability-card">
+                <div class="capability-icon">🏢</div>
+                <h3>Facilities & Sanitation</h3>
+                <ul>
+                    <li>Industrial cleaning</li>
+                    <li>Routine maintenance</li>
+                    <li>OSHA practices</li>
+                    <li>Site readiness</li>
+                </ul>
+            </div>
+            <div class="capability-card">
+                <div class="capability-icon">📦</div>
+                <h3>Supply & Logistics</h3>
+                <ul>
+                    <li>Parts sourcing</li>
+                    <li>MRO supplies</li>
+                    <li>Equipment delivery</li>
+                    <li>Vendor management</li>
+                </ul>
+            </div>
+            <div class="capability-card">
+                <div class="capability-icon">⚡</div>
+                <h3>Installation Support</h3>
+                <ul>
+                    <li>Direct install help</li>
+                    <li>Light technical work</li>
+                    <li>Energy systems</li>
+                    <li>Site coordination</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-header">
+            <span class="section-icon">📊</span>
+            <h2>Experience & Qualifications</h2>
+        </div>
+        <div class="experience-section">
+            <div class="experience-grid">
+                <div class="experience-item">
+                    <p>Active SAM.gov registration with CAGE code and UEID for immediate contracting</p>
+                </div>
+                <div class="experience-item">
+                    <p>Veteran-owned small business status for set-aside opportunities</p>
+                </div>
+                <div class="experience-item">
+                    <p>Hands-on background in sanitation, maintenance, and logistics operations</p>
+                </div>
+                <div class="experience-item">
+                    <p>Proven track record in customer support and installation coordination</p>
+                </div>
+                <div class="experience-item">
+                    <p>Established vendor relationships for hard-to-source parts and equipment</p>
+                </div>
+                <div class="experience-item">
+                    <p>Positioned for micro-purchases, simplified acquisitions, and subcontracting roles</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cta-section">
+        <div class="cta-content">
+            <h2>Let's Talk About Your Next Contract</h2>
+            <p>Whether you're a contracting officer, prime contractor, or procurement professional, I'd welcome the opportunity to show you how I can support your mission.</p>
+            <a href="mailto:victor.nikitisllc@gmail.com" class="btn">Get In Touch</a>
+            <div class="contact-info">
+                <div class="contact-item">
+                    📧 <a href="mailto:victor.nikitisllc@gmail.com">victor.nikitisllc@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    📞 <a href="tel:+16162870871">(616) 287-0871</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+```
